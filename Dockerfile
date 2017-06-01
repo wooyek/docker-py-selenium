@@ -10,7 +10,6 @@ RUN apt-get update && apt-get -y upgrade && \
     python python-dev python-pip python-virtualenv \
     python3 python3-dev python3-pip python3-venv \
     chromium-chromedriver xvfb && \
-    locale-gen en_US.UTF-8 && \
     python -m pip install pip -U && \
     python3 -m pip install pip -U && \
     apt-get clean && \
