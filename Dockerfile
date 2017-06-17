@@ -13,7 +13,7 @@ RUN apt-get update && apt-get -y upgrade && \
     python -m pip install pip -U && \
     python3 -m pip install pip -U && \
     apt-get clean && \
-    pip install selenium pyvirtualdisplay invoke pytest envparse tox coverage pylint pathlib -U && \
+    pip2 install selenium pyvirtualdisplay invoke pytest envparse tox coverage pylint pathlib -U && \
     pip3 install selenium pyvirtualdisplay invoke pytest envparse tox coverage pylint -U && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -24,4 +24,4 @@ ENV LANG en_US.UTF-8 \
 
 COPY py-selenium-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/py-selenium-entrypoint.sh
-ENTRYPOINT ["py-selenium-entrypoint.sh"]
+ENTRYPOINT ["c"]
