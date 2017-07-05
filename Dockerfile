@@ -13,7 +13,8 @@ RUN apt-get update && apt-get -y upgrade && \
     python -m pip install pip -U && \
     python3 -m pip install pip -U && \
     apt-get clean && \
-    pip2 install selenium pyvirtualdisplay invoke pytest pytest-xdist envparse tox coverage pylint pathlib -U && \
+    pip2 install selenium pyvirtualdisplay invoke pytest pytest-xdist pytest-selenium envparse tox coverage pylint pathlib -U && \
+    pip3 install selenium pyvirtualdisplay invoke pytest pytest-xdist pytest-selenium envparse tox coverage pylint -U && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV LANG en_US.UTF-8 \
