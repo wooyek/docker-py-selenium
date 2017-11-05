@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:17.04
 
 MAINTAINER Janusz Skonieczny @wooyek
 LABEL version="0.9.3"
@@ -9,7 +9,7 @@ RUN apt-get update && apt-get -y upgrade && \
     apt-get install -y git unzip nano wget sudo curl build-essential \
     python python-dev python-pip python-virtualenv \
     python3 python3-dev python3-pip python3-venv \
-    chromium-chromedriver xvfb && \
+    chromium-chromedriver chromium-browser libgconf2-4 xvfb && \
     python -m pip install pip -U && \
     python3 -m pip install pip -U && \
     apt-get clean && \
@@ -24,4 +24,4 @@ ENV LANG en_US.UTF-8 \
 
 COPY py-selenium-entrypoint.sh chromedriver /usr/local/bin/
 RUN chmod +x /usr/local/bin/py-selenium-entrypoint.sh
-ENTRYPOINT ["c"]
+ENTRYPOINT ["py-selenium-entrypoint.sh"]

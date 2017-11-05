@@ -29,7 +29,7 @@ release: sync bump ## sync, bump and push to repo to trigger autmated build
 
 test: ## run sample test inside a container
 	echo 'Running tox tests inside the container'
-	docker run --rm -it --volume=$(shell pwd):/vagrant --workdir="/vagrant" wooyek/py-selenium chromedriver --version
+	docker run --rm -it --volume=$(shell pwd):/vagrant --workdir="/vagrant" wooyek/py-selenium py-selenium-entrypoint.sh chromedriver --version
 
 prune: ## clean docker stoped containers and images related to this project
 	docker rm $(shell docker ps --all --filter ancestor=wooyek/py-selenium -q)
