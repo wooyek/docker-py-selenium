@@ -21,6 +21,6 @@ ENV LANG en_US.UTF-8 \
     LC_ALL en_US.UTF-8 \
     PYTHONIOENCODING utf-8
 
-COPY py-selenium-entrypoint.sh /usr/local/bin/
+COPY py-selenium-entrypoint.sh chromedriver /usr/local/bin/
 RUN chmod +x /usr/local/bin/py-selenium-entrypoint.sh
 ENTRYPOINT ["c"]
