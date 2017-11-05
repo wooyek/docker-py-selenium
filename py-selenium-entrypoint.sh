@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "==============================================="
-echo "Docker image wooyek/py-selenium version: 0.9.7"
+echo "Docker image wooyek/py-selenium version: 0.9.8"
 echo "==============================================="
 
 echo "------> Setting up chromedriver path"
