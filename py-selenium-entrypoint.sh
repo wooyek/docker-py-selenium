@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
-echo "*** Setting up chromedriver path ***"
+echo "==============================================="
+echo "Docker image wooyek/py-selenium version: 0.9.19"
+echo "==============================================="
+echo "------> Setting up chromedriver path"
 export PATH=$PATH:/usr/lib/chromium-browser/
 echo $PATH
 which chromedriver
 chromedriver --version
 
-echo "*** Running command passed down to docker ***"
+echo "------> Running command passed down to docker ***"
 exec "$@"
 
