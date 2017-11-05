@@ -8,7 +8,7 @@ bump: ## incremenet version number
 	bumpversion patch
 
 build: ## build docker container image
-	docker build -t wooyek/geodjango:ubuntu-16.04 .
+	docker build -t wooyek/py-selenium:ubuntu-16.04 .
 
 sync: ## sync master and develop branches in both directions
 	git checkout develop
@@ -27,13 +27,16 @@ release: sync bump ## sync, bump and push to repo to trigger autmated build
 	git push origin develop --verbose
 	git push origin master --verbose
 
+test: ## run sample test inside a container
+	echo 'Running tox tests inside the container'
+	docker run --rm -it --volume=$(shell pwd):/vagrant --workdir="/vagrant" wooyek/py-selenium chromedriver --version
 
 prune: ## clean docker stoped containers and images related to this project
-	docker rm $(shell docker ps --all --filter ancestor=wooyek/geodjango -q)
-	docker rmi wooyek/geodjango
+	docker rm $(shell docker ps --all --filter ancestor=wooyek/py-selenium -q)
+	docker rmi wooyek/py-selenium
 
 interactive: ## run inateractive container
-	docker run --rm -i --volume=$(shell pwd):/vagrant --workdir="/vagrant" wooyek/geodjango bash
+	docker run --rm -i --volume=$(shell pwd):/vagrant --workdir="/vagrant" wooyek/py-selenium bash
 
 env: ## check container env
-	docker run --rm -i --volume=$(shell pwd):/vagrant --workdir="/vagrant" --entrypoint=env wooyek/geodjango
+	docker run --rm -i --volume=$(shell pwd):/vagrant --workdir="/vagrant" --entrypoint=env wooyek/py-selenium
