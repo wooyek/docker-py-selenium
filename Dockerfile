@@ -1,7 +1,7 @@
 FROM ubuntu:17.04
 
 MAINTAINER Janusz Skonieczny @wooyek
-LABEL version="0.9.3"
+LABEL version="0.9.4"
 
 # Install tooling for test debuging and libraries needed by geodjango.
 # http://stackoverflow.com/a/27931669/260480
