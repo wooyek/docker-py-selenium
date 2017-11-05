@@ -8,7 +8,7 @@ bump: ## incremenet version number
 	bumpversion patch
 
 build: ## build docker container image
-	docker build -t wooyek/py-selenium:ubuntu-16.04 .
+	docker build -t wooyek/py-selenium .
 
 sync: ## sync master and develop branches in both directions
 	git checkout develop
