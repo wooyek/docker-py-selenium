@@ -1,6 +1,6 @@
 # Docker to run selenium tests from python
 
-Test environment for Selenium tests driven by python scripts.
+Test environment for Selenium tests driven by python scripts. Version 0.9.9
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/wooyek/py-selenium.svg)](https://hub.docker.com/r/wooyek/geodjango/)
 [![Docker Stars](https://img.shields.io/docker/stars/wooyek/py-selenium.svg)](https://hub.docker.com/r/wooyek/py-selenium/)
